@@ -1,0 +1,7 @@
+{
+  "name": "rovianda_mobile_empaquetado",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
