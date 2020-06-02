@@ -11,6 +11,7 @@ import {
   ERROR_EMAIL_NOT_FOUND,
   ERROR_PASSWORD_INVALID,
 } from "src/app/shared/const/const";
+import { noWhiteSpace } from "src/app/shared/validators/whitespace.validator";
 
 @Component({
   selector: "app-login-form",
@@ -28,8 +29,8 @@ export class LoginFormComponent implements OnInit {
     this.loading = false;
     this.form = fb.group(
       {
-        email: ["", [Validators.required, Validators.email]],
-        password: ["", [Validators.required]],
+        email: ["", [Validators.required, Validators.email, noWhiteSpace]],
+        password: ["", [Validators.required, noWhiteSpace]],
       },
       {
         asyncValidators: [

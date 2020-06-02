@@ -67,13 +67,13 @@ export class LoginEffects {
       ofType(fromLoginActions.signAuthSuccess),
       exhaustMap((action) =>
         this.authService.getUserData(action.uid).pipe(
-          switchMap(({ email, name, role }) => {
-            localStorage.setItem("role", role);
+          switchMap(({ email, name, rol }) => {
+            localStorage.setItem("role", rol);
             return [
               fromAuthenticationUser.loadUser({
                 email,
                 name,
-                role,
+                rol,
               }),
               fromLoginActions.signInSuccess(),
             ];
@@ -93,7 +93,7 @@ export class LoginEffects {
     this.action$.pipe(
       ofType(fromLoginActions.signInSuccess),
       exhaustMap(() =>
-        from(this.router.navigate(["/formulation/register-product"])).pipe(
+        from(this.router.navigate(["/menu"])).pipe(
           switchMap((result) =>
             result
               ? [fromLoginActions.finishLoad()]
@@ -108,6 +108,17 @@ export class LoginEffects {
         )
       )
     )
+  );
+
+  signInFailureEffect$ = createEffect(
+    () =>
+      this.action$.pipe(
+        ofType(fromLoginActions.signInFailure),
+        tap((action) => localStorage.clear())
+      ),
+    {
+      dispatch: false,
+    }
   );
 
   signOutEffect = createEffect(() =>

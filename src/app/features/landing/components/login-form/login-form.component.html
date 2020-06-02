@@ -7,8 +7,8 @@
     </ion-row>
     <ion-row class="form-message">
       <ion-col size="12">
-        <h1>Introduce tu usuario y contrase&ntilde;a</h1>
-        <h1>Para iniciar sesi&oacute;n</h1>
+        <h1>Introduce tu usuario y contraseña</h1>
+        <h1>Para iniciar sesión</h1>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -24,8 +24,14 @@
       </ion-item>
     </ion-row>
     <div class="error">
-      <ion-label *ngIf="email.errors">
-        Por favor ingresa un correo electr&oacute;nico v&aacute;lido
+      <ion-label *ngIf="email.invalid && (email.dirty || email.touched)">
+        Dato inválido
+      </ion-label>
+      <ion-label *ngIf="form.get('email').hasError('email')">
+        Ingrese un correo electrónico
+      </ion-label>
+      <ion-label *ngIf="email.touched && email.errors?.whitespace">
+        No se aceptan espacios en blanco
       </ion-label>
     </div>
     <ion-row>
@@ -34,18 +40,27 @@
         <ion-input
           formControlName="password"
           type="password"
-          placeholder="Contrase&ntilde;a"
+          placeholder="Contraseña"
           required
         >
         </ion-input>
       </ion-item>
     </ion-row>
     <div class="error">
-      <ion-label *ngIf="password.errors">
-        Por favor ingresa una contraseña válida
+      <ion-label
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+      >
+        Dato inválido.
+      </ion-label>
+      <ion-label *ngIf="password.touched && password.errors?.whitespace">
+        No se aceptan espacios en blanco
       </ion-label>
     </div>
-    <ion-button class="btn" (click)="onSubmit()" [disabled]="loading">
+    <ion-button
+      class="btn"
+      (click)="onSubmit()"
+      [disabled]="form.invalid || loading"
+    >
       <div style="padding: 10px 0;">
         <label *ngIf="!loading">Iniciar sesión</label>
         <ion-spinner

@@ -4,6 +4,6 @@ export interface AuthenticationUser {
   name?: string;
   surname?: string;
   lastSurname?: string;
-  role?: string;
+  rol?: string;
   email?: string;
 }
