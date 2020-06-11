@@ -1,0 +1,44 @@
+<form [formGroup]="form">
+  <ion-grid>
+    <ion-row class="ion-margin">
+      <ion-col size="6">
+        <ion-item style="--padding-top: 25px; font-size: 22px;">
+          <ion-label position="floating">Fecha*</ion-label>
+          <ion-input formControlName="registerDate"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item style="--padding-top: 25px; font-size: 22px;">
+          <ion-label position="stacked">Producto*</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingresar producto"
+            formControlName="productId"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin">
+      <ion-col size="6">
+        <ion-item style="--padding-top: 25px; font-size: 22px;">
+          <ion-label position="stacked">Lote*</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingrese lote"
+            formControlName="lotId"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item style="--padding-top: 25px; font-size: 22px;">
+          <ion-label position="stacked">Caducidad*</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingrese caducidad"
+            formControlName="expiration"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

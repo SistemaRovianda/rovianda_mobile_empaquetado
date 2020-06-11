@@ -1,0 +1,19 @@
+ion-content {
+  ion-grid {
+    // border: 1px solid blue;
+    height: 100%;
+    .row {
+      &-1 {
+        height: 80%;
+      }
+
+      &-2 {
+        height: 10%;
+      }
+
+      &-3 {
+        height: 10%;
+      }
+    }
+  }
+}

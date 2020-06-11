@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Empaquetado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="row row-1">
+      <ion-col size="12">
+        <app-product-form
+          #form
+          (onSubmit)="onSubmit($event)"
+        ></app-product-form>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row row-2">
+      <ion-col size="12">
+        <app-step></app-step>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row row-3">
+      <ion-col size="4">
+        <ion-button
+          (click)="back()"
+          color="secondary"
+          expand="block"
+          fill="solid"
+        >
+          Regresar
+        </ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <ion-button
+          (click)="nextPresentation()"
+          expand="block"
+          fill="solid"
+          style="--color: #575552;"
+          [disabled]="form.form.invalid"
+        >
+          Presentación
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
