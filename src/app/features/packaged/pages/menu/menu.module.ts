@@ -1,20 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { MenuPageRoutingModule } from './menu-routing.module';
-
-import { MenuPage } from './menu.page';
+import { MenuPage } from "./menu.page";
+import { Routes, RouterModule } from "@angular/router";
+import { OptionMenuModule } from "../../components/buttons/option-menu/option-menu.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    MenuPageRoutingModule
-  ],
-  declarations: [MenuPage]
+  imports: [CommonModule, FormsModule, IonicModule, OptionMenuModule],
+  declarations: [MenuPage],
+  exports: [MenuPage],
 })
 export class MenuPageModule {}

@@ -93,7 +93,7 @@ export class LoginEffects {
     this.action$.pipe(
       ofType(fromLoginActions.signInSuccess),
       exhaustMap(() =>
-        from(this.router.navigate(["/menu"])).pipe(
+        from(this.router.navigate(["/packaged-layout/menu"])).pipe(
           switchMap((result) =>
             result
               ? [fromLoginActions.finishLoad()]

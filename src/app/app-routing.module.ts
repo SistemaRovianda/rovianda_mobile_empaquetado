@@ -18,11 +18,10 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
-    path: "menu",
-    canActivate: [AuthGuard],
+    path: "packaged-layout",
     loadChildren: () =>
-      import("./features/packaged/pages/menu/menu.module").then(
-        (m) => m.MenuPageModule
+      import("./features/packaged/packaged.module").then(
+        (m) => m.PackagedModule
       ),
   },
 ];

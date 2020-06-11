@@ -1,0 +1,22 @@
+ion-grid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ion-button {
+    --background: #575552;
+    --background-activated: #6e6c68;
+    vertical-align: middle;
+    width: 75%;
+    height: 83%;
+    font-size: 18px;
+    align-content: center;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding: 5px;
+    white-space: pre-line;
+    line-height: 1.6;
+  }
+}
