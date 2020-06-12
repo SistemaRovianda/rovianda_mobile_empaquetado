@@ -1,0 +1,59 @@
+<form [formGroup]="form" style="height: 85%;">
+  <ion-grid fixed style="height: 100%;">
+    <ion-row class="ion-align-items-center" style="height: 33%;">
+      <ion-col size="6">
+        <ion-item style="font-size: 20px;">
+          <ion-label position="stacked">Presentación</ion-label>
+          <ion-select placeholder="Selecciona" formControlName="presentationId">
+            <ion-select-option [value]="opt1">Opción 1</ion-select-option>
+            <ion-select-option [value]="opt2">Opción 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item style="font-size: 20px;">
+          <ion-label position="stacked">Piezas</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingresa piezas"
+            formControlName="pieces"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="height: 33%;">
+      <ion-col size="6">
+        <ion-item style="font-size: 20px;">
+          <ion-label position="stacked">Paquetes</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingrese paquetes"
+            formControlName="packs"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item style="font-size: 20px;">
+          <ion-label position="stacked">Peso Kg</ion-label>
+          <ion-input
+            type="text"
+            placeholder="Ingresa peso"
+            formControlName="weight"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="height: 33%;">
+      <ion-col size="12">
+        <ion-item style="font-size: 20px;">
+          <ion-label position="stacked">Observaciones</ion-label>
+          <ion-textarea
+            style="--background: #f0f0f0;"
+            rows="5"
+            formControlName="observations"
+          ></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

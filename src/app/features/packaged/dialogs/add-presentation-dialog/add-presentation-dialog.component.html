@@ -1,0 +1,33 @@
+<ion-grid>
+  <ion-row style="height: 85%;">
+    <ion-col size="12">
+      <app-presentation-form
+        #form
+        (onSubmit)="onSubmit($event)"
+      ></app-presentation-form>
+    </ion-col>
+  </ion-row>
+  <ion-row style="height: 15%;">
+    <ion-col size="6">
+      <ion-button
+        (click)="onCancel()"
+        expand="block"
+        fill="solid"
+        color="secondary"
+      >
+        Cancelar
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button
+        [disabled]="form.form.invalid"
+        (click)="onAdd()"
+        expand="block"
+        fill="solid"
+        color="primary"
+      >
+        Guardar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

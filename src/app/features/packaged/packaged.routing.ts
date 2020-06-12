@@ -4,6 +4,8 @@ import { MenuPage } from "./pages/menu/menu.page";
 import { MenuPageModule } from "./pages/menu/menu.module";
 import { AddRegisterPage } from "./pages/add-register/add-register.page";
 import { AddRegisterPageModule } from "./pages/add-register/add-register.module";
+import { PresentationPage } from "./pages/presentation/presentation.page";
+import { PresentationPageModule } from "./pages/presentation/presentation.module";
 
 const routes: Routes = [
   {
@@ -18,6 +20,10 @@ const routes: Routes = [
         component: AddRegisterPage,
       },
       {
+        path: "presentation",
+        component: PresentationPage,
+      },
+      {
         path: "peticiones",
       },
     ],
@@ -29,6 +35,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MenuPageModule,
     AddRegisterPageModule,
+    PresentationPageModule,
   ],
   exports: [RouterModule],
 })
