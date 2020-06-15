@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { ProductFormComponent } from "../../components/forms/product-form/product-form.component";
 
 import * as moment from "moment";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-add-register",
@@ -14,7 +15,7 @@ export class AddRegisterPage implements OnInit {
 
   productRegister;
 
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit() {}
 
@@ -24,9 +25,14 @@ export class AddRegisterPage implements OnInit {
       registerDate: moment(new Date()).format("YYYY-MM-DD"),
     };
     console.log("Product Registrado: ", product);
+    this._router.navigate(["/packaged-layout/presentation"]);
   }
 
   nextPresentation() {
     this.productForm.onSubmit();
+  }
+
+  onBack(evt) {
+    this._router.navigate(["/packaged-layout/menu"]);
   }
 }

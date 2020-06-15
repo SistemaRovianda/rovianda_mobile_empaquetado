@@ -8,6 +8,7 @@ import { PresentationPage } from "./presentation.page";
 import { AddPresentationDialogModule } from "../../dialogs/add-presentation-dialog/add-presentation-dialog.module";
 import { PresentationCardModule } from "../../components/cards/presentation-card/presentation-card.module";
 import { StepModule } from "src/app/shared/components/step/step.module";
+import { HeaderModule } from "src/app/shared/components/header/header.module";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { StepModule } from "src/app/shared/components/step/step.module";
     IonicModule,
     AddPresentationDialogModule,
     PresentationCardModule,
+    HeaderModule,
     StepModule,
   ],
   declarations: [PresentationPage],

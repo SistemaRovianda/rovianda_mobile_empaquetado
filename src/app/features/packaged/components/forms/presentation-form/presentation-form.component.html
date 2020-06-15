@@ -4,7 +4,12 @@
       <ion-col size="6">
         <ion-item style="font-size: 20px;">
           <ion-label position="stacked">Presentación</ion-label>
-          <ion-select placeholder="Selecciona" formControlName="presentationId">
+          <ion-select
+            placeholder="Selecciona"
+            interface="action-sheet"
+            placeholder="Selecciona"
+            formControlName="presentationId"
+          >
             <ion-select-option [value]="opt1">Opción 1</ion-select-option>
             <ion-select-option [value]="opt2">Opción 2</ion-select-option>
           </ion-select>

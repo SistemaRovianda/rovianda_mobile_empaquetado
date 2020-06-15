@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { AddPresentationDialogComponent } from "../../dialogs/add-presentation-dialog/add-presentation-dialog.component";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-presentation",
@@ -8,7 +9,7 @@ import { AddPresentationDialogComponent } from "../../dialogs/add-presentation-d
   styleUrls: ["./presentation.page.scss"],
 })
 export class PresentationPage implements OnInit {
-  constructor(private _modalCtrl: ModalController) {}
+  constructor(private _modalCtrl: ModalController, private _router: Router) {}
 
   ngOnInit() {}
 
@@ -17,8 +18,8 @@ export class PresentationPage implements OnInit {
     this.modalAddPresentation();
   }
 
-  onBack() {
-    console.log("Retroceder...");
+  onBack(evt) {
+    this._router.navigate(["/packaged-layout/register"]);
   }
 
   onSave() {

@@ -1,15 +1,20 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>menu</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+<app-header [title]="Menu" [titlePath]="Salir" (onBack)="signOut($event)">
+</app-header>
 
 <ion-content>
   <div class="container">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <app-option-menu [title]="'agregar registro'"></app-option-menu>
+          <app-option-menu
+            [title]="'agregar registro'"
+            [routerLink]="['/packaged-layout/register']"
+          ></app-option-menu>
         </ion-col>
         <ion-col>
           <app-option-menu [title]="'Atender peticiones'"></app-option-menu>

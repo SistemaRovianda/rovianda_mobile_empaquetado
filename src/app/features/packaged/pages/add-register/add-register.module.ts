@@ -7,6 +7,7 @@ import { IonicModule } from "@ionic/angular";
 import { AddRegisterPage } from "./add-register.page";
 import { ProductFormModule } from "../../components/forms/product-form/product-form.module";
 import { StepModule } from "src/app/shared/components/step/step.module";
+import { HeaderModule } from "../../../../shared/components/header/header.module";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { StepModule } from "src/app/shared/components/step/step.module";
     FormsModule,
     IonicModule,
     ProductFormModule,
+    HeaderModule,
     StepModule,
   ],
   declarations: [AddRegisterPage],
