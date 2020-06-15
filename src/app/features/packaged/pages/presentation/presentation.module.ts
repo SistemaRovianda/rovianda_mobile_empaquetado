@@ -9,12 +9,14 @@ import { AddPresentationDialogModule } from "../../dialogs/add-presentation-dial
 import { PresentationCardModule } from "../../components/cards/presentation-card/presentation-card.module";
 import { StepModule } from "src/app/shared/components/step/step.module";
 import { HeaderModule } from "src/app/shared/components/header/header.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    RouterModule,
     AddPresentationDialogModule,
     PresentationCardModule,
     HeaderModule,

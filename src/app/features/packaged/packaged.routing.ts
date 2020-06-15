@@ -6,6 +6,8 @@ import { AddRegisterPage } from "./pages/add-register/add-register.page";
 import { AddRegisterPageModule } from "./pages/add-register/add-register.module";
 import { PresentationPage } from "./pages/presentation/presentation.page";
 import { PresentationPageModule } from "./pages/presentation/presentation.module";
+import { ReprocessingPage } from "./pages/reprocessing/reprocessing.page";
+import { ReprocessingPageModule } from "./pages/reprocessing/reprocessing.module";
 
 const routes: Routes = [
   {
@@ -24,6 +26,10 @@ const routes: Routes = [
         component: PresentationPage,
       },
       {
+        path: "reprocessing",
+        component: ReprocessingPage,
+      },
+      {
         path: "peticiones",
       },
     ],
@@ -35,6 +41,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MenuPageModule,
     AddRegisterPageModule,
+    ReprocessingPageModule,
     PresentationPageModule,
   ],
   exports: [RouterModule],
