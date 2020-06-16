@@ -1,0 +1,32 @@
+<app-header
+  [title]="'Empaquetado'"
+  [titlePath]="'Regresar'"
+  (onBack)="onBack($event)"
+>
+</app-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="row row-1">
+      <ion-col size="12">
+        <h2>Productos</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row row-2">
+      <ion-col class="ion-text-center" size="4">
+        No. de Order
+      </ion-col>
+      <ion-col size="4">
+        Vendedor
+      </ion-col>
+      <ion-col class="ion-text-center" size="4">
+        Opciones
+      </ion-col>
+    </ion-row>
+    <ion-row class="row row-3">
+      <ion-col size="12">
+        <app-order-item *ngFor="let order of orders"></app-order-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

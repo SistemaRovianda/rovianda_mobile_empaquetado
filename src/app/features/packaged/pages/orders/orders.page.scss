@@ -1,0 +1,22 @@
+ion-grid {
+  height: 100%;
+
+  .row {
+    &-1 {
+      height: 10%;
+
+      h2 {
+        font-weight: bold;
+      }
+    }
+
+    &-2 {
+      height: 5%;
+    }
+
+    &-3 {
+      height: 85%;
+      overflow-y: scroll;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+ion-grid {
+  background-color: var(--ion-color-secondary);
+  color: var(--ion-color-light);
+  border-radius: 10px;
+  width: 100%;
+  margin: 12px 0;
+
+  ion-row {
+    ion-col {
+      ion-button {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

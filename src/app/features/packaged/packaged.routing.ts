@@ -8,6 +8,8 @@ import { PresentationPage } from "./pages/presentation/presentation.page";
 import { PresentationPageModule } from "./pages/presentation/presentation.module";
 import { ReprocessingPage } from "./pages/reprocessing/reprocessing.page";
 import { ReprocessingPageModule } from "./pages/reprocessing/reprocessing.module";
+import { OrdersPage } from "./pages/orders/orders.page";
+import { OrdersPageModule } from "./pages/orders/orders.module";
 
 const routes: Routes = [
   {
@@ -30,6 +32,10 @@ const routes: Routes = [
         component: ReprocessingPage,
       },
       {
+        path: "orders",
+        component: OrdersPage,
+      },
+      {
         path: "peticiones",
       },
     ],
@@ -42,6 +48,7 @@ const routes: Routes = [
     MenuPageModule,
     AddRegisterPageModule,
     ReprocessingPageModule,
+    OrdersPageModule,
     PresentationPageModule,
   ],
   exports: [RouterModule],
