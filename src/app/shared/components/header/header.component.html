@@ -1,11 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons style="position: absolute;" slot="start">
       <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
-        <ion-icon slot="start" name="star"></ion-icon>
+        <ion-icon lot="start" name="arrow-back-outline"></ion-icon>
         {{ titlePath || "Regresar" }}
       </ion-button>
     </ion-buttons>
-    <ion-title>{{ title || "Titulo" }}</ion-title>
+    <ion-title style="text-align: center;">
+      <ion-grid fixed>
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-col class="ion-align-self-center" size="12">
+            <label>
+              {{ title || "Titulo" }}
+            </label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-title>
   </ion-toolbar>
 </ion-header>

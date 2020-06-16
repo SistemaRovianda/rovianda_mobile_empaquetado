@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { ModalController } from "@ionic/angular";
 
 @Component({
   selector: "app-confirm-dialog",
@@ -8,9 +9,16 @@ import { Component, OnInit, Input } from "@angular/core";
 export class ConfirmDialogComponent implements OnInit {
   @Input() reprocessing;
 
-  constructor() {}
+  constructor(private _modalCtrl: ModalController) {}
 
-  ngOnInit() {
-    console.log("Confirmación: ", this.reprocessing);
+  ngOnInit() {}
+
+  onCancel() {
+    this._modalCtrl.dismiss();
+  }
+
+  onAccept() {
+    console.log("[confirmDialog] Aceptar: ", this.reprocessing);
+    this._modalCtrl.dismiss();
   }
 }

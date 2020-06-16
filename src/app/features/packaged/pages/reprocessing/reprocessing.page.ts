@@ -43,6 +43,7 @@ export class ReprocessingPage implements OnInit {
   async modalConfirm() {
     const modal = await this._modalCtrl.create({
       component: ConfirmDialogComponent,
+      cssClass: "modal-confirm",
       componentProps: {
         reprocessing: this.reprocessingData,
       },

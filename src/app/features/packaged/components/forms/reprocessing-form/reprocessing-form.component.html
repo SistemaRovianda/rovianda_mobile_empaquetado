@@ -1,6 +1,6 @@
 <form [formGroup]="form">
   <ion-grid>
-    <ion-row>
+    <ion-row class="row row-1">
       <ion-col size="6">
         <ion-item>
           <ion-label position="stacked">Fecha</ion-label>
@@ -18,7 +18,7 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="row row-2">
       <ion-col size="6">
         <ion-item>
           <ion-label position="stacked">Lote</ion-label>
@@ -40,7 +40,7 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="row row-3">
       <ion-col size="6">
         <ion-item>
           <ion-label position="stacked">Alérgeno</ion-label>
@@ -54,7 +54,11 @@
       <ion-col size="6">
         <ion-item>
           <ion-label position="stacked">Área</ion-label>
-          <ion-select formControlName="area" placeholder="Seleccione área">
+          <ion-select
+            formControlName="area"
+            interface="action-sheet"
+            placeholder="Seleccione área"
+          >
             <ion-select-option value="area-1">Área 1</ion-select-option>
             <ion-select-option value="area-2">Área 2</ion-select-option>
           </ion-select>
