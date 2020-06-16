@@ -2,10 +2,11 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { OrderItemComponent } from "./order-item.component";
 import { IonicModule } from "@ionic/angular";
+import { OrderDialogModule } from "../../../dialogs/order-dialog/order-dialog.module";
 
 const COMMON_DECLARATINS = [OrderItemComponent];
 
-const COMMON_IMPORTS = [CommonModule, IonicModule];
+const COMMON_IMPORTS = [CommonModule, IonicModule, OrderDialogModule];
 
 @NgModule({
   declarations: COMMON_DECLARATINS,
