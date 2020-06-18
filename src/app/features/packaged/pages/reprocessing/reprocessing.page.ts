@@ -46,6 +46,9 @@ export class ReprocessingPage implements OnInit {
       cssClass: "modal-confirm",
       componentProps: {
         reprocessing: this.reprocessingData,
+        typeConfirm: "reprocessing",
+        message:
+          "Una vez guardada la información no se podra editar, ¿Estás seguro que deseas guardar el reproceso?",
       },
     });
 

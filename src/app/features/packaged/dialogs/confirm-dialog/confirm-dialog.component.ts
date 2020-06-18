@@ -9,6 +9,10 @@ import { ModalController } from "@ionic/angular";
 export class ConfirmDialogComponent implements OnInit {
   @Input() reprocessing;
 
+  @Input() typeConfirm;
+
+  @Input() message;
+
   constructor(private _modalCtrl: ModalController) {}
 
   ngOnInit() {}
@@ -18,7 +22,11 @@ export class ConfirmDialogComponent implements OnInit {
   }
 
   onAccept() {
-    console.log("[confirmDialog] Aceptar: ", this.reprocessing);
     this._modalCtrl.dismiss();
+    if (this.typeConfirm == "reprocessing") {
+      console.log("[confirmDialog] Aceptar Reprocesing: ", this.reprocessing);
+    } else {
+      console.log("[confirmDialog] Aceptar cierre de orden: ");
+    }
   }
 }
