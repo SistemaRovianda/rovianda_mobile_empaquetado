@@ -1,4 +1,22 @@
 form {
-  // border: 1px solid red;
   height: 100%;
+
+  .form-grid {
+    height: 100%;
+
+    .row {
+      height: 25%;
+
+      ion-col {
+        ion-item {
+          font-size: 1.5rem;
+        }
+
+        .date {
+          color: black;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
 }

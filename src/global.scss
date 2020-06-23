@@ -49,3 +49,15 @@
   --width: 80%;
   --height: 800px;
 }
+
+ion-action-sheet {
+  .action-sheet-wrapper {
+    .action-sheet-container {
+      .action-sheet-group {
+        button {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
