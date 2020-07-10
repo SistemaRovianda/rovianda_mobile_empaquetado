@@ -47,7 +47,10 @@
     <ion-row class="row row-3">
       <ion-col size="12">
         <div>
-          <app-presentation-card></app-presentation-card>
+          <app-presentation-card
+            *ngFor="let pPresentation of productsPresentation$ | async"
+            [productPresentation]="pPresentation"
+          ></app-presentation-card>
         </div>
       </ion-col>
     </ion-row>

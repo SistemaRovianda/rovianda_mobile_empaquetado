@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { PresentationFormComponent } from "../../components/forms/presentation-form/presentation-form.component";
 import { ModalController } from "@ionic/angular";
+import { Store } from "@ngrx/store";
+import { AppState } from "src/app/shared/models/app-state.interface";
+import { addProductPresentation } from "../../store/products-presentation/products-presentation.actions";
 
 @Component({
   selector: "app-add-presentation-dialog",
@@ -13,7 +16,10 @@ export class AddPresentationDialogComponent implements OnInit {
 
   presentation;
 
-  constructor(private _modalCtrl: ModalController) {}
+  constructor(
+    private _modalCtrl: ModalController,
+    private _store: Store<AppState>
+  ) {}
 
   ngOnInit() {}
 
@@ -30,6 +36,9 @@ export class AddPresentationDialogComponent implements OnInit {
   onAdd() {
     this.presentationForm.onSubmit();
     console.log("Agregar presentación");
+    this._store.dispatch(
+      addProductPresentation({ productPresentation: this.presentation })
+    );
     this._modalCtrl.dismiss();
   }
 }
