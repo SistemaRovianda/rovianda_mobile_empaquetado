@@ -28,6 +28,8 @@
 /*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 
+@import "./theme/mixins.scss";
+
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -42,6 +44,18 @@
   border-radius: 5px;
   --width: 80%;
   --height: 180px;
+
+  @include breakpoint-size(ms-small) {
+    --height: 200px;
+  }
+
+  @include breakpoint-size(ms-medium) {
+    --height: 200px;
+  }
+
+  @include breakpoint-size(ms-extra-large) {
+    --height: 180px;
+  }
 }
 
 .modal-orders {

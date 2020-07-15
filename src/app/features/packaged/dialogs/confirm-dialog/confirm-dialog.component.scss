@@ -1,0 +1,39 @@
+@import "../../../../../theme/mixins.scss";
+
+.dialog {
+    &__message {
+        @include breakpoint-size(ms-extra-small) {
+            font-size: var(--fs-text-xsm);
+        }
+
+        @include breakpoint-size(ms-small) {
+            font-size: var(--fs-text-sm);
+        }
+
+        @include breakpoint-size(ms-medium) {
+            font-size: var(--fs-text-md);
+        }
+
+        @include breakpoint-size(ms-extra-large) {
+            font-size: var(--fs-text-xl);
+        }
+    }
+
+    &__button {
+        @include breakpoint-size(ms-extra-small) {
+            font-size: var(--fs-text-xsm);
+        }
+
+        @include breakpoint-size(ms-small) {
+            font-size: var(--fs-text-sm);
+        }
+
+        @include breakpoint-size(ms-medium) {
+            font-size: var(--fs-text-md);
+        }
+
+        @include breakpoint-size(ms-extra-large) {
+            font-size: var(--fs-text-xl);
+        }
+    }
+}

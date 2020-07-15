@@ -1,29 +1,29 @@
-<ion-grid fixed class="ion-padding">
-  <ion-row class="row row-1 ion-justify-content-center ion-align-items-center">
-    <ion-col class="ion-text-center" size="4">
+<ion-grid fixed class="container">
+  <ion-row class="container container__row container__row-1">
+    <ion-col class="container container__column" size="4">
       No.
     </ion-col>
-    <ion-col class="ion-text-center" size="4">
+    <ion-col class="container container__column" size="4">
       Producto
     </ion-col>
-    <ion-col class="ion-text-center" size="4">
+    <ion-col class="container container__column" size="4">
       Cantidad Kg.
     </ion-col>
   </ion-row>
-  <ion-row class="row row-2">
-    <ion-col size="12">
-      <ion-grid fixed>
-        <ion-row *ngFor="let product of products; let i = index">
-          <ion-col class="ion-text-center" size="4">{{ i }}</ion-col>
-          <ion-col class="ion-text-center" size="4">producto</ion-col>
-          <ion-col class="ion-text-center" size="4">10</ion-col>
+  <ion-row class="container container__row container__row-2">
+    <ion-col class="container container__column" size="12">
+      <ion-grid class="item">
+        <ion-row class="item item__row" *ngFor="let product of products; let i = index">
+          <ion-col class="item item__column ion-text-center" size="4">{{ i }}</ion-col>
+          <ion-col class="item item__column ion-text-center" size="4">producto</ion-col>
+          <ion-col class="item item__column ion-text-center" size="4">10</ion-col>
         </ion-row>
       </ion-grid>
     </ion-col>
   </ion-row>
-  <ion-row class="row row-3">
-    <ion-col size="12">
-      <ion-button (click)="onAccept()" expand="block" color="primary">
+  <ion-row class="container container__row container__row-3">
+    <ion-col class="container container__column" size="12">
+      <ion-button class="container container__button" (click)="onAccept()" expand="block" color="primary">
         Aceptar
       </ion-button>
     </ion-col>

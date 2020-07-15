@@ -1,30 +1,26 @@
-<app-header
-  [title]="'Empaquetado'"
-  [titlePath]="'Regresar'"
-  (onBack)="onBack($event)"
->
+<app-header [title]="'Empaquetado'" [titlePath]="'Regresar'" (onBack)="onBack($event)">
 </app-header>
 
 <ion-content>
-  <ion-grid fixed>
-    <ion-row class="row row-1">
-      <ion-col size="12">
-        <h2>Productos</h2>
+  <ion-grid fixed class="container">
+    <ion-row class="container container__row container__row-1 ion-justify-content-center ion-align-items-center">
+      <ion-col class="container container__column" size="12">
+        <h1 class="container container__title">Productos</h1>
       </ion-col>
     </ion-row>
-    <ion-row class="row row-2">
-      <ion-col class="ion-text-center" size="4">
+    <ion-row class="container container__row container__row-2 ion-justify-content-center ion-align-items-center">
+      <ion-col class="container container__column ion-text-center" size="4">
         No. de Order
       </ion-col>
-      <ion-col size="4">
+      <ion-col class="container container__column" size="4">
         Vendedor
       </ion-col>
-      <ion-col class="ion-text-center" size="4">
+      <ion-col class="container container__column ion-text-center" size="4">
         Opciones
       </ion-col>
     </ion-row>
-    <ion-row class="row row-3">
-      <ion-col size="12">
+    <ion-row class="container container__row row-3">
+      <ion-col class="container container__column" size="12">
         <app-order-item *ngFor="let order of orders"></app-order-item>
       </ion-col>
     </ion-row>
