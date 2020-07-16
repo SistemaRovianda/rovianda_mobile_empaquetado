@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { reducers, metaReducers } from "./shared/store/reducer/index.reducer";
 import { effects } from "./shared/store/effects/index.effects";
 import { AppProvidersModule } from "./providers/app-providers.module";
+import { IonicStorageModule } from "@ionic/storage";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { AppProvidersModule } from "./providers/app-providers.module";
     BrowserModule,
     AngularFireAuthModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

@@ -1,4 +1,4 @@
-<app-header [title]="'Empaquetado'" [titlePath]="'Regresar'" (onBack)="onBack($event)">
+<app-header [title]="'Empaquetado'" [titlePath]="'Salir'" (onBack)="onBack($event)">
 </app-header>
 
 <ion-content>
@@ -21,7 +21,7 @@
     </ion-row>
     <ion-row class="container container__row row-3">
       <ion-col class="container container__column" size="12">
-        <app-order-item *ngFor="let order of orders"></app-order-item>
+        <app-order-item *ngFor="let packaging of packaging$ | async" [packaging]="packaging"></app-order-item>
       </ion-col>
     </ion-row>
   </ion-grid>

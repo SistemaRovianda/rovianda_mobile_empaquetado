@@ -1,1 +1,4 @@
-export interface Product {}
+export interface Product {
+  Product: string;
+  quantity: number;
+}

@@ -1,7 +1,7 @@
 <ion-grid fixed class="item item--all">
   <ion-row class="item item__row ion-justify-content-center ion-align-items-center">
-    <ion-col class="item item__column" size="4" (click)="openDialog()">123</ion-col>
-    <ion-col class="item item__column" size="4" (click)="openDialog()">Un vendedor</ion-col>
+    <ion-col class="item item__column" size="4" (click)="openDialog(packaging.userId)">{{packaging.noOrder}}</ion-col>
+    <ion-col class="item item__column" size="4" (click)="openDialog(packaging.userId)">{{packaging.vendedor}}</ion-col>
     <ion-col class="item item__column" size="4">
       <ion-button class="item item__button" (click)="closeOrder()" expand="block" color="light">
         Orden atendida

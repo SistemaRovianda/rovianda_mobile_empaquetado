@@ -19,6 +19,7 @@ const routes: Routes = [
   },
   {
     path: "packaged-layout",
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import("./features/packaged/packaged.module").then(
         (m) => m.PackagedModule

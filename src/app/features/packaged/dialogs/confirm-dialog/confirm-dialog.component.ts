@@ -13,6 +13,8 @@ export class ConfirmDialogComponent implements OnInit {
 
   @Input() message;
 
+  @Input() userId: string;
+
   constructor(private _modalCtrl: ModalController) {}
 
   ngOnInit() {}

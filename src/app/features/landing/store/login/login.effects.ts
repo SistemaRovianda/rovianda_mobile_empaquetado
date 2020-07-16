@@ -6,12 +6,14 @@ import { catchError, delay, exhaustMap, switchMap, tap } from "rxjs/operators";
 import * as fromLoginActions from "./login.action";
 import { AuthService } from "src/app/shared/Services/auth.service";
 import * as fromAuthenticationUser from "../authentication/authentication.action";
+import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class LoginEffects {
   constructor(
     private action$: Actions,
     private authService: AuthService,
+    private _storage: Storage,
     private router: Router
   ) {}
 
@@ -45,7 +47,7 @@ export class LoginEffects {
       exhaustMap((action) =>
         this.authService.getTokenCurrentUser().pipe(
           switchMap(({ token }) => {
-            localStorage.setItem("token", token);
+            this._storage.set("token", token);
             return [
               fromAuthenticationUser.loadUser({ token }),
               fromLoginActions.signAuthSuccess({ uid: action.uid }),
@@ -68,7 +70,7 @@ export class LoginEffects {
       exhaustMap((action) =>
         this.authService.getUserData(action.uid).pipe(
           switchMap(({ email, name, rol }) => {
-            localStorage.setItem("role", rol);
+            this._storage.set("role", rol);
             return [
               fromAuthenticationUser.loadUser({
                 email,
@@ -93,7 +95,7 @@ export class LoginEffects {
     this.action$.pipe(
       ofType(fromLoginActions.signInSuccess),
       exhaustMap(() =>
-        from(this.router.navigate(["/packaged-layout/menu"])).pipe(
+        from(this.router.navigate(["/packaged-layout/orders"])).pipe(
           switchMap((result) =>
             result
               ? [fromLoginActions.finishLoad()]
