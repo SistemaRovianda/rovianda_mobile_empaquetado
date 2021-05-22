@@ -2,6 +2,9 @@
 </app-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-grid fixed class="container">
     <ion-row class="container container__row container__row-1 ion-justify-content-center ion-align-items-center">
       <ion-col class="container container__column" size="12">
@@ -9,19 +12,17 @@
       </ion-col>
     </ion-row>
     <ion-row class="container container__row container__row-2 ion-justify-content-center ion-align-items-center">
-      <ion-col class="container container__column ion-text-center" size="4">
+      <ion-col class="container container__column ion-text-center" size="6">
         No. de Order
       </ion-col>
-      <ion-col class="container container__column" size="4">
+      <ion-col class="container container__column" size="6">
         Vendedor
       </ion-col>
-      <ion-col class="container container__column ion-text-center" size="4">
-        Opciones
-      </ion-col>
+      
     </ion-row>
     <ion-row class="container container__row row-3">
       <ion-col class="container container__column" size="12">
-        <app-order-item *ngFor="let packaging of packaging$ | async" [packaging]="packaging"></app-order-item>
+        <app-order-item *ngFor="let packaging of packagings" [packaging]="packaging"></app-order-item>
       </ion-col>
     </ion-row>
   </ion-grid>

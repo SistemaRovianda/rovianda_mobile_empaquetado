@@ -4,19 +4,19 @@
       No.
     </ion-col>
     <ion-col class="container container__column" size="4">
-      Producto
+      Producto - presentación
     </ion-col>
     <ion-col class="container container__column" size="4">
-      Cantidad Kg.
+      Cantidad
     </ion-col>
   </ion-row>
   <ion-row class="container container__row container__row-2">
     <ion-col class="container container__column" size="12">
       <ion-grid class="item">
-        <ion-row class="item item__row" *ngFor="let product of products$; let i = index">
-          <ion-col class="item item__column ion-text-center" size="4">{{ i }}</ion-col>
-          <ion-col class="item item__column ion-text-center" size="4">{{product.Product}}</ion-col>
-          <ion-col class="item item__column ion-text-center" size="4">{{product.quantity}}</ion-col>
+        <ion-row class="item item__row" *ngFor="let product of data.packaging.subOrders; let i = index">
+          <ion-col class="item item__column ion-text-center" size="4">{{ i+1 }}</ion-col>
+          <ion-col class="item item__column ion-text-center" size="4">{{product.productRovianda.name +' '+ product.presentation.presentation +' '+ product.presentation.presentationType}}</ion-col>
+          <ion-col class="item item__column ion-text-center" size="4">{{product.units}}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-col>

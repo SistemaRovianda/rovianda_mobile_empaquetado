@@ -6,6 +6,7 @@ import { Packaging } from "src/app/shared/models/packaging.interface";
 import { Store } from "@ngrx/store";
 import { AppState } from "src/app/shared/models/app-state.interface";
 import { loadProductsByPackaging } from "../../../store/products/products.actions";
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: "app-order-item",
@@ -16,45 +17,23 @@ export class OrderItemComponent implements OnInit {
   @Input() packaging: Packaging;
 
   constructor(
-    private modalCtrl: ModalController,
-    private _store: Store<AppState>
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {}
 
-  openDialog(userId: string) {
-    this.openModal(userId);
+  openDialog(packaging: Packaging) {
+    this.openModal(packaging);
   }
 
-  async openModal(userId?: string) {
-    this._store.dispatch(loadProductsByPackaging({ userId: userId }));
-    const modal = await this.modalCtrl.create({
-      component: OrderDialogComponent,
-      cssClass: "modal-orders",
-      // componentProps: {
-      //   orderId: userId,
-      // },
-    });
-
-    return await modal.present();
-  }
-
-  closeOrder(userId: string) {
-    this.confirmDialog(userId);
-  }
-
-  async confirmDialog(userId: string) {
-    const modal = await this.modalCtrl.create({
-      component: ConfirmDialogComponent,
-      cssClass: "modal-confirm",
-      componentProps: {
-        userId: userId,
-        typeConfirm: "closeOrder",
-        message:
-          "Al atender la orden no se volverá a mostrar, ¿Deseas cerrar la orden?",
+  async openModal(packaging: Packaging) {
+    const modal = await this.dialog.open(
+      OrderDialogComponent,{
+      data:{
+        packaging
       },
-    });
-
-    return await modal.present();
+      panelClass:"modal-orders"
+    }
+      );
   }
 }

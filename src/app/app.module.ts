@@ -18,6 +18,7 @@ import { reducers, metaReducers } from "./shared/store/reducer/index.reducer";
 import { effects } from "./shared/store/effects/index.effects";
 import { AppProvidersModule } from "./providers/app-providers.module";
 import { IonicStorageModule } from "@ionic/storage";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +42,7 @@ import { IonicStorageModule } from "@ionic/storage";
     HttpClientModule,
     AppRoutingModule,
     AppProvidersModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     StatusBar,
